@@ -6,7 +6,7 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
 //connect to MongoDB
-mongoose.connect('mongodb://localhost/testForAuth');
+mongoose.connect('mongodb://localhost:27017/Users', { useNewUrlParser: true })
 var db = mongoose.connection;
 
 //handle mongo error
@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/templateLogReg'));
 
 // include routes
-var routes = require('./routes/router');
+var routes = require('./Route/router');
 app.use('/', routes);
 
 // catch 404 and forward to error handler
