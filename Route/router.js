@@ -5,7 +5,7 @@ var User = require('../User/user');
 
 // GET route for reading data
 router.get('/', function (req, res, next) {
-  return res.sendFile(path.join(__dirname + '/templateLogReg/index.html'));
+  return res.sendFile(path.join(__dirname + '/Page/index.html'));
 });
 
 
